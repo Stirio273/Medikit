@@ -21,12 +21,13 @@ public class AuthService {
     }
 
     public User register(RegisterRequest request) {
-        if (userRepository.existsByUsername(request.getUsername())) {
-            throw new RuntimeException("Username already exists!");
+        if (userRepository.existsByEmail(request.getEmail())) {
+            throw new RuntimeException("Email already exists!");
         }
 
         User user = new User();
         user.setUsername(request.getUsername());
+        user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword())); // hash du mot de passe
         user.setRole(request.getRole());
 
@@ -34,7 +35,7 @@ public class AuthService {
     }
 
     public String login(LoginRequest request) {
-        Optional<User> userOpt = userRepository.findByUsername(request.getUsername());
+        Optional<User> userOpt = userRepository.findByEmail(request.getEmail());
         if (userOpt.isEmpty()) {
             return null; // utilisateur inexistant
         }

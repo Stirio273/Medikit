@@ -17,7 +17,7 @@ public class SecurityConfig {
             .csrf().disable() // pour tester facilement
             .cors().and()
             .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**").permitAll() // register et login sans auth
+                .requestMatchers("/api/auth/**", "/api/patients/**").permitAll() // register et login sans auth
                 .anyRequest().authenticated() // tout le reste nécessite auth
             .and()
             .formLogin().disable(); // désactive la page de login par défaut

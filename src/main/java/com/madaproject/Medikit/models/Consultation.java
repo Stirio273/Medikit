@@ -1,6 +1,7 @@
 package com.madaproject.Medikit.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -17,8 +18,10 @@ public class Consultation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long consultationId;
 
-    @NotBlank(message = "Le médecin est obligatoire")
-    private String doctor;
+    @NotNull(message = "Le médecin est obligatoire")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User doctor;
 
     private LocalDateTime consultationDate;
     

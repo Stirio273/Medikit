@@ -32,7 +32,7 @@ public class SecurityConfig {
         configuration.addAllowedOrigin("https://medikit-app-rn9v.vercel.app"); 
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
-        configuration.setAllowCredentials(true);
+        configuration.setAllowCredentials(false);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

@@ -76,4 +76,11 @@ public class ConsultationService {
     public void deleteConsultation(Long id) {
         consultationRepository.deleteById(id);
     }
+
+    public List<ConsultationResponseDTO> getAllConsultationsOrderByDateDesc() {
+        List<Consultation> consultations = consultationRepository.findAllByOrderByConsultationDateDesc();
+        return consultations.stream()
+                .map(consultationMapper::toResponseDTO)
+                .collect(Collectors.toList());
+    }
 }

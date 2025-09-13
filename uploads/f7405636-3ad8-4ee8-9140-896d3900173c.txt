@@ -1,0 +1,53 @@
+Cloner le projet : 
+git clone https://gitlab.com/Nana137/m1p12mean.git
+
+cd m1p12mean
+
+Vérifie que tu es bien sur la branche principale :
+git checkout main
+
+Récupérer les dernières modifications :
+git pull origin main
+
+Créer ta nouvelle branche :
+git checkout -b navalona
+
+Vérifier ta branche :
+git branch
+[Cela affichera une liste de toutes les branches locales, et tu devrais voir un astérisque (*) à côté de ta nouvelle branche.]
+
+Modifier ou ajouter des fichiers :
+git add .
+
+Faire un commit avec un message expliquant tes changements :
+git commit -m "Description de ce que tu as fait"
+
+Pousser ta branche sur GitLab :
+git push origin navalona
+
+
+Retourne sur la branche principale (main) : Si tu n'y es pas déjà, bascule sur la branche main
+git checkout main
+
+Récupère les dernières modifications de la branche principale :
+git pull origin main
+
+Fusionner ta branche dans main :
+git merge navalona
+
+
+Résoudre les conflits (si nécessaire)
+1-Vérifie les fichiers en conflit. Git marquera les fichiers en conflit dans ton éditeur de texte.
+
+2-Résoudre les conflits. Ouvre les fichiers en conflit et modifie les sections pour que le code final soit correct.
+
+3-Marquer les conflits comme résolus. Une fois que tu as résolu les conflits, ajoute les fichiers corrigés :
+git add .
+git commit -m "Fusion de la branche nom-de-ta-branche dans main"
+
+git push origin main
+
+
+
+
+

@@ -28,7 +28,8 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("http://localhost:5173"); // adresse de ton frontend
+        // configuration.addAllowedOrigin("http://localhost:5173"); 
+        configuration.addAllowedOrigin("https://medikit-app-rn9v.vercel.app"); 
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
         configuration.setAllowCredentials(true);

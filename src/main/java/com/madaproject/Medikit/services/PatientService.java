@@ -49,7 +49,7 @@ public class PatientService {
     }
 
     public List<PatientDTO> searchPatients(String keyword) {
-        return patientRepository.findByNomContainingIgnoreCaseOrPrenomContainingIgnoreCase(keyword, keyword)
+        return patientRepository.findByNomContainingIgnoreCaseOrPrenomContainingIgnoreCaseOrEmailContainingIgnoreCase(keyword, keyword, keyword)
                 .stream()
                 .map(this::toDTO)
                 .collect(Collectors.toList());
